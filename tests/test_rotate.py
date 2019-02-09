@@ -11,7 +11,7 @@ def test_inputs():
     with pytest.raises(ValueError):
         pre.rotate("Path", 7, 500) # Outside of the rotation range
 
-def return_imgs():
+def return_imgs(): # Tests that the number of images returned from translate is correct
     test_img = skimage.io.imread("test_img")
     returned_arr = pre.rotate("test_image", 5, 180)
     assert returned_arr.shape()[0] == 5
