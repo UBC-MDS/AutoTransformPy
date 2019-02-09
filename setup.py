@@ -11,4 +11,5 @@ setup(
     license='LICENSE.txt',
     long_description=open('README.txt').read(),
     url='https://github.com/UBC-MDS/AutoTransformPy',
+    install_requires=[],
 )
