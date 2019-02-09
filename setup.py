@@ -7,7 +7,7 @@ setup(
     author_email='NA',
     packages=[],
     scripts=[],
-    description='Perform translations to photos and return a set of translated photos',
+    description='A robust image transformation generator',
     license='LICENSE.txt',
     long_description=open('README.txt').read(),
     url='https://github.com/UBC-MDS/AutoTransformPy',
