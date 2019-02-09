@@ -13,16 +13,15 @@
 Overview
 --------
 
-A common application of supervised machine learning is identifying the object of an image. One issue that users encounter is a model misclassifying a new image because the object is rotated or translated in some way that was not captured in the training images. The purpose of this package is to create a more robust set of images for users to train their model with. The package will accept a set of images as an input, apply a series of translations to them, and return a larger, robust training set. Translations include: rotating, mirroring, shifting the object's location in the frame, darkening, and colour manipulations.
+A common application of supervised machine learning is identifying the object of an image. One issue that users encounter is a model misclassifying a new image because the object is rotated or translated in some way that was not captured in the training images. The purpose of this package is to create a more robust set of images for users to train their model with. The package will accept an image as an input, apply a series of translations to it, as specified by the user, and return an array of translated pixel values. Translations include: rotating, mirroring, and translating (shifting the object's location in the frame).
 
 Functions
 ---------
 
 Rotate
 ------
-
 - Parameters:
-  - Image to transform
+  - Image to transform (string: PATH)
   - Number of images to generate (integer)
   - Maximum rotation in degrees (integer)
 - Returns:
@@ -31,18 +30,19 @@ Rotate
 Mirror
 ------
 - Parameters:
-  - Image to transform
+  - Image to transform (string: PATH)
+  - Direction of mirroring (string: 'horizontal', 'vertical', 'both')
 - Returns:
-  - Array of a single mirrored image
+  - Array of mirrored image(s)
 
-Chameleon
+Translate
 ---------
 - Parameters:
-  - Image to transform
+  - Image to transform (string: PATH)
   - Number of images to generate (integer)
-  - Maximum change in pixel colour (integer)
+  - Maximum distance in pixels (integer)
 - Returns:
-  - Array of randomly colour modified (within max range) images of length based on number of images parameter
+  - Array of randomly translated (within max range) images of length based on number of images parameter
 
 
 Similar Packages

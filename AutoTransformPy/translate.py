@@ -1,7 +1,7 @@
-def transform (image_path, num_images, max_translation):
+def translate (image_path, num_images, max_translation):
     """Returns an array of images of length num_images randomly translated a random number of pixels up to max_rotation
 
-    Translate takes the path to and image and generates randomly translated images, the desired number
+    Translate takes the path to an image and generates randomly translated images, the desired number
     of times. Each translated image will not be translated more than the maximum distance provided.
     The translation can be in any direction.
 
