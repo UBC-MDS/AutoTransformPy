@@ -12,8 +12,7 @@ def translate (image_path, num_images, max_translation):
     num_images: integer
         The number of translated images to be returned.
     max_translation: integer
-        The maximum allowable rotation for any of the translated images. Can be
-        between 1 and 360.
+        The maximum distance in pixels that the image can be translated.
 
     Returns:
     --------
