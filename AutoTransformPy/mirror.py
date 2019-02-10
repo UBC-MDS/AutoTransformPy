@@ -15,6 +15,6 @@ def mirror(image_path, direction = 'all'):
 
     Returns:
     --------
-    mirrored_images: array
+    mirrored_images: np.array
     """
 
