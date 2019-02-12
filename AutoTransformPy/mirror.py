@@ -1,3 +1,6 @@
+import numpy as np
+from skimage.ip import imread
+
 def mirror(image_path, direction = 'all'):
   """Returns an array of image(s) that are the mirrored form of the original image
 
@@ -18,3 +21,22 @@ def mirror(image_path, direction = 'all'):
     mirrored_images: np.array
     """
 
+    # import image as array
+    img = imread(image_path)
+
+    # flip horizontally
+    if direction == 'horizontal':
+        horiz_image = np.fliplr(img)
+        mirrored_images = horiz_image
+
+    # flip vertically
+    elif direction == 'vertical':
+        vert_image = img[::-1]
+        mirrored_images = vert_image
+
+    else:
+        horiz_image = np.fliplr(img)
+        vert_image = img[::-1]
+        mirrored_images = horiz_image, vert_image
+
+    return mirrored_images
