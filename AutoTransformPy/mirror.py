@@ -7,7 +7,7 @@
 
 
 import numpy as np
-from skimage.ip import imread
+from skimage.io import imread
 
 def mirror(image_path, direction = 'all'):
   """Returns an array of image(s) that are the mirrored form of the original image
@@ -29,6 +29,18 @@ def mirror(image_path, direction = 'all'):
     --------
     mirrored_images: np.array
     """
+    # check for valid input parameters
+    if not isinstance(image_path, str):
+        raise TypeError("The file path must be a string.")
+
+    if not isinstance(direction, str):
+        raise TypeError("The direction must be a string: 'horizontal', 'vertical', or 'all'")
+
+    if not direction in ["horizontal","vertical", "all"]
+        raise ValueError("The direction must be 'horizontal', 'vertical' or 'all'")
+
+    if not exists(image_path):
+        raise FileNotFoundError("No image found at path")
 
     # import image as array
     img = imread(image_path)

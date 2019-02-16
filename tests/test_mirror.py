@@ -1,25 +1,26 @@
 import sys
-sys.path.append("../AutoTransformPy")
-import AutoTransformPy as pre
+sys.path.append("../AutoTransformPy/")
+import pytest
+import mirror as mir
 
 def test_inputs():
     with pytest.raises(TypeError):
-       pre.mirror("Path", 7) # direction must be string
-       pre.mirror(True, "horizontal") # image path must be a string
+       mir.mirror("../tests/imgs/milad.jpg", 7) # direction must be string
+       mir.mirror(True, "horizontal") # image path must be a string
 
     with pytest.raises(ValueError):
-        pre.mirror("Path", "h") # Not a valid string option for direction
+        mir.mirror("../tests/imgs/milad.jpg" "h") # Not a valid string option for direction
 
     with pytest.raises(FileNotFoundError):
-        pre.mirror("img/Path") # Incorrect directory/file not in location
+        mir.mirror("../tests/imgs/Path.jpg") # Incorrect directory/file not in location
 
-def return_imgs(): # Tests that the number of images returned from translate is correct
-    test_img = skimage.io.imread(test_image)
-    returned_arr_1a = pre.mirror(test_img, "horizontal") # should return 1 image
-    returned_arr_1b = pre.mirror(test_img, "vertical") # should return 1 image
-    returned_arr_2a = pre.mirror(test_img, "all") # should return 2 images
-    returned_arr_2b = pre.mirror(test_img) # all is default, should return 2 images
-    
+def test_return_imgs(): # Tests that the number of images returned from translate is correct
+    test_img = skimage.io.imread("../tests/imgs/milad.jpg")
+    returned_arr_1a = mir.mirror(test_img, "horizontal") # should return 1 image
+    returned_arr_1b = mir.mirror(test_img, "vertical") # should return 1 image
+    returned_arr_2a = mir.mirror(test_img, "all") # should return 2 images
+    returned_arr_2b = mir.mirror(test_img) # all is default, should return 2 images
+
     assert returned_arr_1a.shape()[0] == 1
     assert returned_arr_1b.shape()[0] == 1
     assert returned_arr_2a.shape()[0] == 2
