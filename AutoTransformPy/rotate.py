@@ -1,3 +1,10 @@
+# Copyright 2019 Brenden Everitt
+# Licensed under the MIT License
+# Use of this file must be in compliance with the License, LICENSE.md
+#
+# February 2019
+# This script is for AutoTransformPy function Rotate.
+
 from skimage.io import imread
 from skimage.transform import rotate as rot
 import numpy as np

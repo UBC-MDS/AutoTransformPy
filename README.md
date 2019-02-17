@@ -40,7 +40,7 @@ To install AuttoTransformPy:
 1. Clone AutoTransformPy to your local machine: `git clone https://github.com/UBC-MDS/AutoTransformPy.git`
 2. Navigate to the repository in your terminal.
 3. Install input: `python setup.py install`
-4. You can now use AutoTransformPy. Seee usage instructions below:
+4. You can now use AutoTransformPy. See usage instructions below:
 
 ### Usage
 
@@ -52,13 +52,13 @@ To install AuttoTransformPy:
 
 **Arguments:**
 
-- `image_path`: file path of the imput image (string)
+- `image_path`: file path of the input image (string)
 - `num_images`: number of randomly rotated images to be returned (integer)
 - `max_rotation`: maximum allowable degrees of rotation of the images (integer) between 1 and 360
 
 **Output:**
 
-- An np.array of pixel values of the rotated images. Array contains `num_images` + 1 images (original plus all rotated images)
+- An np.array of pixel values of the rotated images. Array contains `num_images`.
 
 **Example:**
 
