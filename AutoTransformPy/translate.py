@@ -41,7 +41,6 @@ def translate (image_path, num_images, max_translation):
 
     org_image = imread(image_path)
 
-    print(org_image.shape)
     if max_translation >= org_image.shape[0] or max_translation >= org_image.shape[1]:
         raise ValueError("The maximum translation must be less than the width and height of the image.")
 
