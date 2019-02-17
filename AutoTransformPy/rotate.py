@@ -51,7 +51,7 @@ def rotate (image_path, num_images, max_rotation):
     # Perform image rotation
     rotations = np.random.randint(-max_rotation, max_rotation, num_images)
     org_image = imread(image_path)
-    rotated_images = []
+    rotated_images = [org_image]
 
     for a_rotation in rotations:
         rotated_images.append(rot(org_image, a_rotation, resize=False))
