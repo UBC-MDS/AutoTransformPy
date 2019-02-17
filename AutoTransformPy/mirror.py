@@ -39,7 +39,7 @@ def mirror (image_path, direction = 'all'):
     if not isinstance(direction, str):
         raise TypeError("The direction must be a string: 'horizontal', 'vertical', or 'all'")
 
-    if not direction in ["horizontal","vertical", "all"]:
+    if not direction.lower() in ["horizontal","vertical", "all"]:
         raise ValueError("The direction must be 'horizontal', 'vertical' or 'all'")
 
     if not os.path.isfile(image_path):
@@ -50,12 +50,12 @@ def mirror (image_path, direction = 'all'):
     mirrored_images = [img]
 
     # flip horizontally
-    if direction == 'horizontal' or direction == 'all':
+    if direction.lower() == 'horizontal' or direction.lower() == 'all':
         horiz_image = np.fliplr(img)
         mirrored_images.append(horiz_image)
 
     # flip vertically
-    if direction == 'vertical' or direction == 'all':
+    if direction.lower() == 'vertical' or direction.lower() == 'all':
         vert_image = img[::-1]
         mirrored_images.append(vert_image)
 

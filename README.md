@@ -1,6 +1,6 @@
 # AutoTransform
 
-### Contributors
+## Contributors
 
 | Name | GitHub |
 |---|---|
@@ -9,11 +9,11 @@
 | Rayce Rossum | [RayceRossum](https://github.com/RayceRossum) |
 
 
-### Overview
+## Overview
 
 A common application of supervised machine learning is identifying the object of an image. One issue that users encounter is a model misclassifying a new image because the object is rotated or translated in some way that was not captured in the training images. The purpose of this package is to create a more robust set of images for users to train their model with. The package will accept an image as an input, apply a series of transformations to it, and return an array of transformed pixel values. Transformations include: rotating, mirroring, and translating (shifting the object's location in the frame).
 
-### Functions
+## Functions
 
 #### Rotate
 
@@ -28,21 +28,21 @@ Mirrors an image in the horizontal and/or vertical direction and returns the pix
 Translate will move an image within its frame, so that the topic of the image will be shifted to a new location in the frame. The distance and direction of translation will be chosen randomly, but the user specifies the maximum distance of the translation and the number of images they want generated. It returns the pixel values of the translated images.
 
 
-### Python Environment
+## Python Environment
 
 Scikit-image is a image processing package that contains functions for performing various operations to images, such as rotating or resizing, among many others. AutoTransformPy utilizes some of this packages functionality and builds it out, so the user can easily gain many variations of an image. The intended usage of this package is for the development of a larger set of training images for the training of an image classification algorithms.
 
 
-### Installation
+## Installation
 
 To install AutoTransformPy:
 
 1. In your console, type: `pip install git+https://github.com/UBC-MDS/AutoTransformPy.git`
 2. You can now use AutoTransformPy. See usage instructions below:
 
-### Usage
+## Usage
 
-#### Rotate
+### Rotate
 
 `from AutoTransformPy.rotate import rotate`
 
@@ -56,14 +56,14 @@ To install AutoTransformPy:
 
 **Output:**
 
-- An np.array of pixel values of the rotated images. Array contains `num_images`.
+- An np.array of pixel values of the rotated images. Array contains `num_images` + 1 images (original plus all translated images)
 
 **Example:**
 
 - `rotate("../tests/imgs/milad.jpg", 10, 280)`
 
 
-#### Mirror
+### Mirror
 
 `from AutoTransformPy.mirror import mirror`
 
@@ -83,7 +83,7 @@ To install AutoTransformPy:
 - `mirror("../tests/imgs/milad.jpg", "horizontal")`
 
 
-#### Translate
+### Translate
 
 `from AutoTransformPy.translate import translate`
 
@@ -104,7 +104,7 @@ To install AutoTransformPy:
 - `translate("../tests/imgs/milad.jpg", 5, 80)`
 
 
-### Package Dependencies
+## Package Dependencies
 
 - `numpy`
 - `skimage`
