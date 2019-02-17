@@ -35,12 +35,10 @@ Scikit-image is a image processing package that contains functions for performin
 
 ### Installation
 
-To install AuttoTransformPy:
+To install AutoTransformPy:
 
-1. Clone AutoTransformPy to your local machine: `git clone https://github.com/UBC-MDS/AutoTransformPy.git`
-2. Navigate to the repository in your terminal.
-3. Install input: `python setup.py install`
-4. You can now use AutoTransformPy. See usage instructions below:
+1. In your console, type: `pip install git+https://github.com/UBC-MDS/AutoTransformPy.git`
+2. You can now use AutoTransformPy. See usage instructions below:
 
 ### Usage
 
