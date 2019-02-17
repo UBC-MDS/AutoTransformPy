@@ -17,5 +17,5 @@ def test_inputs():
 def test_return_imgs(): # Tests that the number of images returned from rotate is correct
     test_img = imread("../tests/imgs/milad.jpg")
     returned_arr = rot.rotate("../tests/imgs/milad.jpg", 5, 180)
-    assert returned_arr.shape[0] == 5
+    assert returned_arr.shape[0] == 6
     assert returned_arr.shape[1:] == test_img.shape
