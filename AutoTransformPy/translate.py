@@ -2,7 +2,7 @@ from skimage.io import imread, imshow
 from skimage.transform import AffineTransform, warp
 import numpy as np
 
-from matplotlib import pyplot as plt
+# from matplotlib import pyplot as plt
 
 def translate (image_path, num_images, max_translation):
     """Returns an array of images of length num_images randomly translated a random number of pixels up to max_rotation
@@ -47,13 +47,13 @@ def translate (image_path, num_images, max_translation):
 
     # Perform image translation
     translations = (np.random.randint(-max_translation, max_translation, num_images), np.random.randint(-max_translation, max_translation, num_images))
-    translated_images = []
+    translated_images = [org_image]
 
     for i in range(len(translations[0])):
         tform = AffineTransform(translation=(translations[0][i], translations[1][i]))
         translated_images.append(warp(org_image, tform, mode="constant", preserve_range=True).astype('uint8'))
 
-    return np.asarray(translated_images), org_image
+    return np.asarray(translated_images)
 
 
 # data, org_image = translate("../tests/imgs/milad.jpg", 10, 50)

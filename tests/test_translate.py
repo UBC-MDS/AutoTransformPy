@@ -15,8 +15,8 @@ def test_inputs():
 
 def test_return_imgs(): # Tests that the number of images returned from translate is correct
     test_img = imread("../tests/imgs/milad.jpg")
-    returned_arr, org_image = trans.translate("../tests/imgs/milad.jpg", 5, 10)
+    returned_arr = trans.translate("../tests/imgs/milad.jpg", 5, 10)
 
-    assert org_image.shape == test_img.shape
-    assert returned_arr.shape[0] == 5
+    assert returned_arr[0].shape == test_img.shape
+    assert returned_arr.shape[0] == 6
     assert returned_arr.shape[1:] == test_img.shape
