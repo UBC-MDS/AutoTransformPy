@@ -71,7 +71,7 @@ To install AutoTransformPy:
 
 **Arguments:**
 
-- `image_path`: file path of the imput image (string)
+- `image_path`: file path of the input image (string)
 - `direction`: direction of mirroring (string, optional) 'horizontal', 'vertical', or 'all'. If not specified, defaults to 'all'
 
 **Output:**
