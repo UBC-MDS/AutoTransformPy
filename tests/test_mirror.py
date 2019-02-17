@@ -34,13 +34,13 @@ def test_return_imgs(): # Tests that the number of images returned from translat
     returned_arr_2a = mir.mirror("../tests/imgs/milad.jpg", "all") # should return 2 images
     returned_arr_2b = mir.mirror("../tests/imgs/milad.jpg") # all is default, should return 2 images
 
-    assert returned_arr_1a.shape[0] == 1  # check one image in array
-    assert returned_arr_1b.shape[0] == 1  # check one image in array
-    assert returned_arr_2a.shape[0] == 2  # check two images in array
-    assert returned_arr_2b.shape[0] == 2  # check two images in array
+    assert returned_arr_1a.shape[0] == 2  # check two image in array (original and mirrored)
+    assert returned_arr_1b.shape[0] == 2  # check two image in array (original and mirrored)
+    assert returned_arr_2a.shape[0] == 3  # check three images in array (original and mirrored both directions)
+    assert returned_arr_2b.shape[0] == 3  # check three images in array (original and mirrored both directions)
     assert returned_arr_1a.shape[1:] == test_img.shape # check that returned image shapes same as input image shape
 
-    assert np.all(returned_arr_1a[0,:,1] == test_img[:,(test_img.shape[1]-2)])  # check that image is correctly mirrored horizontally
-    assert np.all(returned_arr_1b[0,1,:] == test_img[(test_img.shape[0] - 2),:])  # check that image is correctly mirrored vertically
-    assert np.all(returned_arr_2b[0,:,1] == test_img[:,(test_img.shape[1] - 2)]) # check horizontal image mirroring on 'all'
-    assert np.all(returned_arr_2b[1,1,:] == test_img[(test_img.shape[0] - 2),:]) # check vertical image mirroring on 'all'
+    assert np.all(returned_arr_1a[1,:,1] == test_img[:,(test_img.shape[1]-2)])  # check that image is correctly mirrored horizontally
+    assert np.all(returned_arr_1b[1,1,:] == test_img[(test_img.shape[0] - 2),:])  # check that image is correctly mirrored vertically
+    assert np.all(returned_arr_2b[1,:,1] == test_img[:,(test_img.shape[1] - 2)]) # check horizontal image mirroring on 'all'
+    assert np.all(returned_arr_2b[2,1,:] == test_img[(test_img.shape[0] - 2),:]) # check vertical image mirroring on 'all'

@@ -47,7 +47,7 @@ def mirror (image_path, direction = 'all'):
 
     # import image as array
     img = imread(image_path)
-    mirrored_images = []
+    mirrored_images = [img]
 
     # flip horizontally
     if direction == 'horizontal' or direction == 'all':
