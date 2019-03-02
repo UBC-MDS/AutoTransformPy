@@ -8,6 +8,7 @@
 from skimage.io import imread
 from skimage.transform import rotate as rot
 import numpy as np
+import os
 
 def rotate (image_path, num_images, max_rotation):
     """Returns an array of images of length num_images randomly rotated a random degree up to max_rotation
@@ -47,6 +48,9 @@ def rotate (image_path, num_images, max_rotation):
 
     if max_rotation < 1 or max_rotation > 360:
         raise ValueError("The maximum rotation must be between 1 and 360.")
+
+    if not os.path.isfile(image_path):
+        raise FileNotFoundError("No image found at path")
 
     # Perform image rotation
     rotations = np.random.randint(-max_rotation, max_rotation, num_images)
