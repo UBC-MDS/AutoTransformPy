@@ -58,6 +58,6 @@ def rotate (image_path, num_images, max_rotation):
     rotated_images = [org_image]
 
     for a_rotation in rotations:
-        rotated_images.append(rot(org_image, a_rotation, resize=False))
+        rotated_images.append(rot(org_image, a_rotation, resize=False).astype('uint8'))
 
     return np.asarray(rotated_images)
