@@ -56,7 +56,7 @@ To install AutoTransformPy:
 
 **Output:**
 
-- An np.array of pixel values of the rotated images. Array contains `num_images` + 1 images (original plus all translated images)
+- An np.array of pixel values of the rotated images. Array contains `num_images` + 1 images (original plus all rotated images)
 
 **Example:**
 
@@ -109,3 +109,39 @@ To install AutoTransformPy:
 - `numpy`
 - `skimage`
 - `os`
+
+
+## Full Usage Example & Output
+
+```
+# pip install git+https://github.com/UBC-MDS/AutoTransformPy.git
+
+from AutoTransformPy.mirror import mirror
+from AutoTransformPy.rotate import rotate
+from AutoTransformPy.translate import translate
+from skimage.io import imshow
+
+# perform transformations
+m = mirror("../tests/imgs/milad.jpg", "horizontal")
+r = rotate("../tests/imgs/milad.jpg", 10, 280)
+t = translate("../tests/imgs/milad.jpg", 5, 80)
+
+# view dimensions of returned arrays
+m.shape  # mirror function
+r.shape  # rotate function
+t.shape  # translate function
+
+# display original image
+imshow(m[0])
+imshow(r[0])
+imshow(t[0])
+
+# display one of the transformed images
+imshow(m[1])
+imshow(r[1])
+imshow(t[1])
+
+```
+
+# Tests Output
+
