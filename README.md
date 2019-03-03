@@ -56,7 +56,7 @@ To install AutoTransformPy:
 
 **Output:**
 
-- An np.array of pixel values of the rotated images. Array contains `num_images` + 1 images (original plus all translated images)
+- An np.array of pixel values of the rotated images. Array contains `num_images` + 1 images (original plus all rotated images)
 
 **Example:**
 
@@ -109,3 +109,55 @@ To install AutoTransformPy:
 - `numpy`
 - `skimage`
 - `os`
+
+
+## Full Usage Example & Output
+
+```
+# pip install git+https://github.com/UBC-MDS/AutoTransformPy.git
+
+from AutoTransformPy.mirror import mirror
+from AutoTransformPy.rotate import rotate
+from AutoTransformPy.translate import translate
+from skimage.io import imshow
+
+# perform transformations
+m = mirror("../tests/imgs/milad.jpg", "horizontal")
+r = rotate("../tests/imgs/milad.jpg", 10, 280)
+t = translate("../tests/imgs/milad.jpg", 5, 80)
+
+# view dimensions of returned arrays
+# it will be a 4D array, with the 1st dimension representing how many photos are in the array
+m.shape  # mirror function
+r.shape  # rotate function
+t.shape  # translate function
+
+# display original image
+imshow(m[0])  # using mirror function as example
+
+
+# display one of the transformed images
+imshow(m[1])  # mirror function
+imshow(r[1])  # rotate function
+imshow(t[1])  # translate function
+
+```
+
+# Tests Output
+
+```
+================================================= test session starts =================================================
+platform win32 -- Python 3.6.8, pytest-4.1.1, py-1.7.0, pluggy-0.8.1
+rootdir: C:\Users\Alycia\Desktop\data_science\block_5\AutoTransformPy, inifile:
+plugins: remotedata-0.3.1, openfiles-0.3.2, doctestplus-0.2.0, arraydiff-0.3
+collected 6 items
+
+test_mirror.py ..                                                                                                [ 33%]
+test_rotate.py ..                                                                                                [ 66%]
+test_translate.py ..                                                                                             [100%]
+
+============================================== 6 passed in 27.15 seconds ==============================================
+
+```
+
+All our tests pass, however due to the layout of our test documents, we are unable to use a coverage testing function at this time. We tried to troublehsoot, but it will require a rewrite of our test packages. 
