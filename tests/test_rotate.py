@@ -14,6 +14,9 @@ def test_inputs():
         rot.rotate("../tests/imgs/milad.jpg", 7, 500) # Outside of the rotation range
         rot.rotate("../tests/imgs/milad.jpg", -1, 500) # Nonsense number of images to return
 
+    with pytest.raises(FileNotFoundError):
+        rot.rotate("../tests/imgs/Path.jpg") # Incorrect directory/file not in location
+
 def test_return_imgs(): # Tests that the number of images returned from rotate is correct
     test_img = imread("../tests/imgs/milad.jpg")
     returned_arr = rot.rotate("../tests/imgs/milad.jpg", 5, 180)
