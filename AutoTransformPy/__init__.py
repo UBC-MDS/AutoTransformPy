@@ -1,3 +1,3 @@
 name = "AutoTransformPy"
 
-from mirror.py import mirror
+from AutoTransformPy.mirror import mirror
