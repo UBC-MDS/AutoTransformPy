@@ -14,25 +14,26 @@ import pytest
 from skimage.io import imread
 import numpy as np
 sys.path.append("../AutoTransformPy/")
-import mirror as mir
+# import mirror as mir
+import AutoTransformPy as ATP
 
 def test_inputs():
     with pytest.raises(TypeError):
-       mir.mirror("../tests/imgs/milad.jpg", 7) # direction must be string
-       mir.mirror(True, "horizontal") # image path must be a string
+       ATP.mirror("../tests/imgs/milad.jpg", 7) # direction must be string
+       ATP.mirror(True, "horizontal") # image path must be a string
 
     with pytest.raises(ValueError):
-        mir.mirror("../tests/imgs/milad.jpg", "h") # Not a valid string option for direction
+        ATP.mirror("../tests/imgs/milad.jpg", "h") # Not a valid string option for direction
 
     with pytest.raises(FileNotFoundError):
-        mir.mirror("../tests/imgs/Path.jpg") # Incorrect directory/file not in location
+        ATP.mirror("../tests/imgs/Path.jpg") # Incorrect directory/file not in location
 
 def test_return_imgs(): # Tests that the number of images returned from translate is correct
     test_img = imread("../tests/imgs/milad.jpg")
-    returned_arr_1a = mir.mirror("../tests/imgs/milad.jpg", "horizontal") # should return 1 image
-    returned_arr_1b = mir.mirror("../tests/imgs/milad.jpg", "vertical") # should return 1 image
-    returned_arr_2a = mir.mirror("../tests/imgs/milad.jpg", "all") # should return 2 images
-    returned_arr_2b = mir.mirror("../tests/imgs/milad.jpg") # all is default, should return 2 images
+    returned_arr_1a = ATP.mirror("../tests/imgs/milad.jpg", "horizontal") # should return 1 image
+    returned_arr_1b = ATP.mirror("../tests/imgs/milad.jpg", "vertical") # should return 1 image
+    returned_arr_2a = ATP.mirror("../tests/imgs/milad.jpg", "all") # should return 2 images
+    returned_arr_2b = ATP.mirror("../tests/imgs/milad.jpg") # all is default, should return 2 images
 
     assert returned_arr_1a.shape[0] == 2  # check two image in array (original and mirrored)
     assert returned_arr_1b.shape[0] == 2  # check two image in array (original and mirrored)

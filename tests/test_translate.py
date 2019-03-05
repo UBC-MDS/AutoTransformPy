@@ -2,20 +2,21 @@ import sys
 import pytest
 from skimage.io import imread
 sys.path.append("../AutoTransformPy/")
-import translate as trans
+# import translate as trans
+import AutoTransformPy as ATP
 
 def test_inputs():
     with pytest.raises(TypeError):
-       trans.translate(6, 5, 2) # Not a string for the file path
-       trans.translate("../tests/imgs/milad.jpg", "seven", 2) # Not a valid number of images
-       trans.translate("../tests/imgs/milad.jpg", 6, "eight") # Not a valid translation amount
+       ATP.translate(6, 5, 2) # Not a string for the file path
+       ATP.translate("../tests/imgs/milad.jpg", "seven", 2) # Not a valid number of images
+       ATP.translate("../tests/imgs/milad.jpg", 6, "eight") # Not a valid translation amount
 
     with pytest.raises(ValueError):
-        trans.translate("../tests/imgs/milad.jpg", 7, 1000) # Outside of the translation range, possible to get empty images
+        ATP.translate("../tests/imgs/milad.jpg", 7, 1000) # Outside of the translation range, possible to get empty images
 
 def test_return_imgs(): # Tests that the number of images returned from translate is correct
     test_img = imread("../tests/imgs/milad.jpg")
-    returned_arr = trans.translate("../tests/imgs/milad.jpg", 5, 10)
+    returned_arr = ATP.translate("../tests/imgs/milad.jpg", 5, 10)
 
     assert returned_arr[0].shape == test_img.shape
     assert returned_arr.shape[0] == 6
