@@ -2,7 +2,7 @@ import sys
 import pytest
 from skimage.io import imread
 sys.path.append("../AutoTransformPy/")
-import rotate as rot
+# import rotate as rot
 import AutoTransformPy as ATP
 
 def test_inputs():
