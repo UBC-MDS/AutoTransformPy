@@ -1,4 +1,6 @@
-# AutoTransform
+# AutoTransform  
+
+[![Build Status](https://travis-ci.org/UBC-MDS/AutoTransformPy.svg?branch=master)](https://travis-ci.org/UBC-MDS/AutoTransformPy)
 
 ## Contributors
 
