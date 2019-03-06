@@ -166,10 +166,10 @@ test_translate.py ..                                                            
 ```
 Name                                                                                           Stmts   Miss  Cover   Missing
 ----------------------------------------------------------------------------------------------------------------------------
-/home/rayce/Assignments/Block 5/DSCI 524/AutoTransformPy-Master/AutoTransformPy/__init__.py        0      0   100%
-/home/rayce/Assignments/Block 5/DSCI 524/AutoTransformPy-Master/AutoTransformPy/mirror.py         22      0   100%
-/home/rayce/Assignments/Block 5/DSCI 524/AutoTransformPy-Master/AutoTransformPy/rotate.py         20      0   100%
-/home/rayce/Assignments/Block 5/DSCI 524/AutoTransformPy-Master/AutoTransformPy/translate.py      21      0   100%
+                                                                AutoTransformPy/__init__.py        0      0   100%
+                                                                AutoTransformPy/mirror.py         22      0   100%
+                                                                AutoTransformPy/rotate.py         20      0   100%
+                                                                AutoTransformPy/translate.py      21      0   100%
 ----------------------------------------------------------------------------------------------------------------------------
 TOTAL                                                                                             63      0   100%
 ```
