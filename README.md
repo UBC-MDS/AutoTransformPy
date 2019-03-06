@@ -1,4 +1,4 @@
-# AutoTransformPy  <img src="../docs/logopy.png" width="160" align="right"/>
+# AutoTransformPy  <img src="docs/logopy.png" width="160" align="right"/>
 
 [![Build Status](https://travis-ci.org/UBC-MDS/AutoTransformPy.svg?branch=master)](https://travis-ci.org/UBC-MDS/AutoTransformPy)
 [![codecov](https://codecov.io/gh/UBC-MDS/AutoTransformPy/branch/master/graph/badge.svg)](https://codecov.io/gh/UBC-MDS/AutoTransformPy)
