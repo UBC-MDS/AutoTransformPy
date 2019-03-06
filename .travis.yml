@@ -13,7 +13,7 @@ addons:
       - python-coverage
 script:
   - pytest
-  - py.test --cov-report= --cov=AutoTransformR tests/
+  - py.test --cov-report= --cov=AutoTransformPy tests/
 
 # code coverage badge
 after_success:
