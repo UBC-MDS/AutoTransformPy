@@ -6,5 +6,15 @@ python:
 install:
   - pip install -r requirements.txt
 
-# command to run tests
-script: pytest
+# command to run tests & document coverage
+addons:
+  apt:
+    packages:
+      - python-coverage
+script:
+  - pytest
+  - py.test --cov-report= --cov=AutoTransformR tests/
+
+# code coverage badge
+after_success:
+  - codecov
