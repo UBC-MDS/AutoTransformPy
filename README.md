@@ -1,4 +1,4 @@
-# AutoTransformPy  <img src="docs/logopy.png" width="160" align="right"/>
+# AutoTransformPy  <img src="../docs/logopy.png" width="160" align="right"/>
 
 [![Build Status](https://travis-ci.org/UBC-MDS/AutoTransformPy.svg?branch=master)](https://travis-ci.org/UBC-MDS/AutoTransformPy)
 [![codecov](https://codecov.io/gh/UBC-MDS/AutoTransformPy/branch/master/graph/badge.svg)](https://codecov.io/gh/UBC-MDS/AutoTransformPy)
@@ -20,7 +20,7 @@ A common application of supervised machine learning is identifying the object of
 
 ## Installation
 
-To install AutoTransformPy. In your console, type:
+In your console, type:
 
 `pip install git+https://github.com/UBC-MDS/AutoTransformPy.git`
 
