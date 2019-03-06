@@ -4,7 +4,6 @@ from skimage.io import imread
 sys.path.append("../AutoTransformPy/")
 from AutoTransformPy import translate as trans
 
-print(sys.path)
 def test_inputs():
     with pytest.raises(TypeError):
        trans.translate(6, 5, 2) # Not a string for the file path
