@@ -1,8 +1,8 @@
 import sys
 import pytest
 from skimage.io import imread
-sys.path.append("../AutoTransformPy/")
 from AutoTransformPy import rotate as rot
+sys.path.append("/AutoTransformPy")
 
 def test_inputs():
     with pytest.raises(TypeError):
