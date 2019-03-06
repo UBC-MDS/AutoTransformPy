@@ -160,4 +160,13 @@ test_translate.py ..                                                            
 
 ```
 
-All our tests pass, however due to the layout of our test documents, we are unable to use a coverage testing function at this time. We tried to troublehsoot, but it will require a rewrite of our test packages. 
+```
+Name                                                                                           Stmts   Miss  Cover   Missing
+----------------------------------------------------------------------------------------------------------------------------
+/home/rayce/Assignments/Block 5/DSCI 524/AutoTransformPy-Master/AutoTransformPy/__init__.py        0      0   100%
+/home/rayce/Assignments/Block 5/DSCI 524/AutoTransformPy-Master/AutoTransformPy/mirror.py         22      0   100%
+/home/rayce/Assignments/Block 5/DSCI 524/AutoTransformPy-Master/AutoTransformPy/rotate.py         20      0   100%
+/home/rayce/Assignments/Block 5/DSCI 524/AutoTransformPy-Master/AutoTransformPy/translate.py      21      0   100%
+----------------------------------------------------------------------------------------------------------------------------
+TOTAL                                                                                             63      0   100%
+```
