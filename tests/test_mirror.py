@@ -21,6 +21,8 @@ fname = os.path.join(os.path.dirname(__file__), '../tests/imgs/milad.jpg')
 def test_inputs():
     with pytest.raises(TypeError):
        mir.mirror(fname, 7) # direction must be string
+
+    with pytest.raises(TypeError):
        mir.mirror(True, "horizontal") # image path must be a string
 
     with pytest.raises(ValueError):

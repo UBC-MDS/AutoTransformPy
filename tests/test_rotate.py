@@ -9,11 +9,14 @@ fname = os.path.join(os.path.dirname(__file__), '../tests/imgs/milad.jpg')
 def test_inputs():
     with pytest.raises(TypeError):
        rot.rotate(6, 5, 345) # Not a string for the file path
+    with pytest.raises(TypeError):
        rot.rotate(fname, "seven", 345) # Not a valid number of images
+    with pytest.raises(TypeError):
        rot.rotate(fname, 6, "eight") # Not a valid rotation amount
 
     with pytest.raises(ValueError):
         rot.rotate(fname, 7, 500) # Outside of the rotation range
+    with pytest.raises(ValueError):
         rot.rotate(fname, -1, 500) # Nonsense number of images to return
 
     with pytest.raises(FileNotFoundError):

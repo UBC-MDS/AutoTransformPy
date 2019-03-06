@@ -5,10 +5,9 @@
 # February 2019
 # This script is for AutoTransformPy function Mirror.
 
-
-import numpy as np
 from skimage.io import imread
 import os
+import numpy as np
 
 def mirror (image_path, direction = 'all'):
     """Returns an array of image(s) that are the mirrored form of the original image
