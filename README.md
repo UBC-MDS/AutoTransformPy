@@ -129,7 +129,6 @@ translate(image_path, num_images, max_translation)
 from AutoTransformPy.mirror import mirror
 from AutoTransformPy.rotate import rotate
 from AutoTransformPy.translate import translate
-from skimage.io import imshow
 
 # perform transformations
 m = mirror("../tests/imgs/milad.jpg", "horizontal")
@@ -142,13 +141,14 @@ m.shape  # mirror function
 r.shape  # rotate function
 t.shape  # translate function
 
+# You can use skimage.io to view the transformed images:
+from skimage.io import imshow
+
 # display original image
 imshow(m[0])  # using mirror function as example
-
 
 # display one of the transformed images
 imshow(m[1])  # mirror function
 imshow(r[1])  # rotate function
 imshow(t[1])  # translate function
-
 ```
