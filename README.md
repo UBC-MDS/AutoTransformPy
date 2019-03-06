@@ -143,7 +143,9 @@ imshow(t[1])  # translate function
 
 ```
 
-# Tests Output
+## Testing
+
+#### Output of Tests:
 
 ```
 ================================================= test session starts =================================================
@@ -160,4 +162,14 @@ test_translate.py ..                                                            
 
 ```
 
-All our tests pass, however due to the layout of our test documents, we are unable to use a coverage testing function at this time. We tried to troublehsoot, but it will require a rewrite of our test packages. 
+#### Code Coverage:
+```
+Name                                                                                           Stmts   Miss  Cover   Missing
+----------------------------------------------------------------------------------------------------------------------------
+                                                                AutoTransformPy/__init__.py        0      0   100%
+                                                                AutoTransformPy/mirror.py         22      0   100%
+                                                                AutoTransformPy/rotate.py         20      0   100%
+                                                                AutoTransformPy/translate.py      21      0   100%
+----------------------------------------------------------------------------------------------------------------------------
+TOTAL                                                                                             63      0   100%
+```
