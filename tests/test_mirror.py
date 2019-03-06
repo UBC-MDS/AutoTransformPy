@@ -19,6 +19,7 @@ import mirror as mir
 def test_inputs():
     with pytest.raises(TypeError):
        mir.mirror("../tests/imgs/milad.jpg", 7) # direction must be string
+    with pytest.raises(TypeError):
        mir.mirror(True, "horizontal") # image path must be a string
 
     with pytest.raises(ValueError):
