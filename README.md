@@ -143,7 +143,9 @@ imshow(t[1])  # translate function
 
 ```
 
-# Tests Output
+## Testing
+
+#### Output of Tests:
 
 ```
 ================================================= test session starts =================================================
