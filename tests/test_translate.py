@@ -19,6 +19,10 @@ def test_inputs():
     with pytest.raises(ValueError):
         trans.translate(fname, -1, 500) # Nonsense number of images to return
 
+    with pytest.raises(FileNotFoundError):
+        trans.translate("../tests/imgs/Path.jpg", 7, 100) # Incorrect directory/file not in location
+
+
 def test_return_imgs(): # Tests that the number of images returned from translate is correct
     test_img = imread(fname)
     returned_arr = trans.translate(fname, 5, 10)
