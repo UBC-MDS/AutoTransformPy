@@ -24,23 +24,33 @@ def translate (image_path, num_images, max_translation):
     """
 
     # Check for valid input paramters types
-    if not isinstance(image_path, str):
-        raise TypeError("The file path must be a string.")
+    try:
+        if not isinstance(image_path, str):
+            raise TypeError("The file path must be a string.")
 
-    if not isinstance(num_images, int):
-        raise TypeError("The number of images returned must be an integer.")
+        if not isinstance(num_images, int):
+            raise TypeError("The number of images returned must be an integer.")
 
-    if not isinstance(max_translation, int):
-        raise TypeError("The maximum translation of images must be an integer.")
+        if not isinstance(max_translation, int):
+            raise TypeError("The maximum translation of images must be an integer.")
 
-    # Check for valid input paramter values
-    if num_images < 1:
-        raise ValueError("The number of images returned must be 1 or greater.")
+        # Check for valid input paramter values
+        if num_images < 1:
+            raise ValueError("The number of images returned must be 1 or greater.")
 
-    org_image = imread(image_path)
+        org_image = imread(image_path)
 
-    if max_translation >= org_image.shape[0] or max_translation >= org_image.shape[1]:
-        raise ValueError("The maximum translation must be less than the width and height of the image.")
+        if max_translation >= org_image.shape[0] or max_translation >= org_image.shape[1]:
+            raise ValueError("The maximum translation must be less than the width and height of the image.")
+
+    except TypeError as e:
+        print("Invalid parameter types. Correct parameter types: image_path: str, num_images: int, max_translation: int")
+        raise e
+    except ValueError as e:
+        print("Invalid max_translation value. max_translation must be greater than 1 and less than the width and height of the image.")
+        raise e
+    except FileNotFoundError as e:
+        raise e
 
     # Perform image translation
     translations = (np.random.randint(-max_translation, max_translation, num_images), np.random.randint(-max_translation, max_translation, num_images))
