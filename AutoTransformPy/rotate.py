@@ -32,29 +32,36 @@ def rotate (image_path, num_images, max_rotation):
     rotated_images: np.array
     """
 
-    # Check for valid input paramters types
-    if not isinstance(image_path, str):
-        raise TypeError("The file path must be a string.")
+    try:
+        # Check for valid input paramters types
+        if not isinstance(image_path, str):
+            raise TypeError("The file path must be a string.")
 
-    if not isinstance(num_images, int):
-        raise TypeError("The number of images returned must be an integer.")
+        if not isinstance(num_images, int):
+            raise TypeError("The number of images returned must be an integer.")
 
-    if not isinstance(max_rotation, int):
-        raise TypeError("The maximum rotation of images must be an integer.")
+        if not isinstance(max_rotation, int):
+            raise TypeError("The maximum rotation of images must be an integer.")
 
-    # Check for valid input paramter values
-    if num_images < 1:
-        raise ValueError("The number of images returned must be 1 or greater.")
+        # Check for valid input paramter values
+        if num_images < 1:
+            raise ValueError("The number of images returned must be 1 or greater.")
 
-    if max_rotation < 1 or max_rotation > 360:
-        raise ValueError("The maximum rotation must be between 1 and 360.")
+        if max_rotation < 1 or max_rotation > 360:
+            raise ValueError("The maximum rotation must be between 1 and 360.")
 
-    if not os.path.isfile(image_path):
-        raise FileNotFoundError("No image found at path")
+        org_image = imread(image_path)
+    except TypeError as e:
+        print("Invalid parameter types. Correct parameter types: image_path: str, num_images: int, max_rotation: int")
+        raise e
+    except ValueError as e:
+        print("Invalid max_rotation value. max_rotation must be greater than 1 and less than 360.")
+        raise e
+    except FileNotFoundError as e:
+        raise e
 
     # Perform image rotation
     rotations = np.random.randint(-max_rotation, max_rotation, num_images)
-    org_image = imread(image_path)
     rotated_images = [org_image]
 
     for a_rotation in rotations:

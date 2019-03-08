@@ -30,22 +30,29 @@ def mirror (image_path, direction = 'all'):
     mirrored_images: np.array
     """
 
-    # check for valid input parameters
+    try:
+        # check for valid input parameters
+        if not isinstance(image_path, str):
+            raise TypeError("The file path must be a string.")
 
-    if not isinstance(image_path, str):
-        raise TypeError("The file path must be a string.")
+        if not isinstance(direction, str):
+            raise TypeError("The direction must be a string: 'horizontal', 'vertical', or 'all'")
 
-    if not isinstance(direction, str):
-        raise TypeError("The direction must be a string: 'horizontal', 'vertical', or 'all'")
+        if not direction.lower() in ["horizontal","vertical", "all"]:
+            raise ValueError("The direction must be 'horizontal', 'vertical' or 'all'")
 
-    if not direction.lower() in ["horizontal","vertical", "all"]:
-        raise ValueError("The direction must be 'horizontal', 'vertical' or 'all'")
+        img = imread(image_path)
 
-    if not os.path.isfile(image_path):
-        raise FileNotFoundError("No image found at path")
+    except TypeError as e:
+        print("Invalid parameter types. Correct parameter types: image_path: str, num_images: int, direction: string")
+        raise e
+    except ValueError as e:
+        print("Invalid direction value. The direction must be a string: 'horizontal', 'vertical', or 'all'")
+        raise e
+    except FileNotFoundError as e:
+        raise e
 
     # import image as array
-    img = imread(image_path)
     mirrored_images = [img]
 
     # flip horizontally
