@@ -121,7 +121,7 @@ translate(image_path, num_images, max_translation)
 - `os`
 
 
-## Full Usage Example & Output
+## Full Usage Example
 
 ```
 # pip install git+https://github.com/UBC-MDS/AutoTransformPy.git
